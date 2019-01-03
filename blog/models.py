@@ -8,9 +8,9 @@ from tagging.fields import TagField
 from tagging.registry import register
 
 STATUS = {
-        0: u'草稿',
-        1: u'发布',
-        2: u'删除',
+    0: u'草稿',
+    1: u'发布',
+    2: u'删除',
 }
 
 EDITOR = [

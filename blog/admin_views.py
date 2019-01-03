@@ -41,7 +41,7 @@ def markdown_image_upload_handler(request):
                 img = Image.open(file_img)
                 width, height = img.size
                 if width > 824:
-                    img = ThumbnailTool.constrain_thumbnail(img, times=width/824.0)
+                    img = ThumbnailTool.constrain_thumbnail(img, times=width / 824.0)
 
                 file_name = path + filename
                 img.save(file_name)
@@ -75,7 +75,7 @@ def tinymce_image_upload_handler(request):
             img = Image.open(file_img)
             width, height = img.size
             if width > 824:
-                img = ThumbnailTool.constrain_thumbnail(img, times=width/824.0)
+                img = ThumbnailTool.constrain_thumbnail(img, times=width / 824.0)
 
             path = MEDIA_ROOT + "/post/"
             if not os.path.exists(path):

@@ -1,4 +1,4 @@
-from django.conf.urls import url,include
+from django.conf.urls import url, include
 
 from blog.admin_views import PostView, DeletePost, NewPost, UpdatePostIndexView, AddPost, \
     UpdateDraft, UpdatePost, UpdateEditor, LogoutView, CarouselIndexView, CarouselEditView, \

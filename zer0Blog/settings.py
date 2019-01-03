@@ -25,7 +25,7 @@ SECRET_KEY = '(6ssnl-d!(-2=#(8=**#kf_2z6h!yz$@lvpmq@&)a2*t4%sgtu'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -73,20 +73,23 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'zer0Blog.wsgi.application'
 
+MYSQLDB_CONNECT_TIMEOUT = 1
 DATABASES = {
     'default': {
+        'CONN_MAX_AGE': 3600,
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'zer0Blog',
-        'USER': 'lxtalx',
-        'PASSWORD': 'lxtalx',
-        'HOST': '10.0.3.13',
-        # 'USER': 'root',
-        # 'PASSWORD': 'root',
-        # 'HOST': '10.0.3.12',
-        # 'USER': 'root',
-        # 'PASSWORD': 'lxtalx',
-        # 'HOST': '127.0.0.1',
-        'PORT': '3306'
+        'NAME': 'zer0blog',
+        'USER': 'root',
+        'PASSWORD': '123',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
+        'TEST': {
+            'CHARSET': 'utf8',
+            'COLLATION': 'utf8_general_ci'
+        },
+        'OPTIONS': {
+            'connect_timeout': MYSQLDB_CONNECT_TIMEOUT,
+        }
     }
 }
 

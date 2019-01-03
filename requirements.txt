@@ -1,0 +1,4 @@
+django==1.9
+django-tagging
+MySQL-python==1.2.5
+Pillow
